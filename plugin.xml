@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.charmlot.alipay"
+    version="0.1">
+    <name>alipay</name>
+    <description>alipay plugin for cordova</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,alipay</keywords>
+    <js-module src="www/alipay.js" name="Alipay">
+        <clobbers target="plugins.Alipay" />
+    </js-module>
+
+    <!-- android -->
+    <!--platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WebIntent" >
+                <param name="android-package" value="net.tunts.webintent.WebIntent"/>
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/alipay.java" target-dir="src/com/charmlot/alipay" />
+    </platform-->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Alipay">
+                <param name="ios-package" value="Alipay"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/Alipay.h" />
+        <source-file src="src/ios/Alipay.m" />
+        <resource-file src="src/ios/AlipaySDK.bundle" />
+        <framework src="src/ios/AlipaySDK.framework" custom="true" />
+        <framework src="Security.framework" />
+        <framework src="SystemConfiguration.framework" />
+        <framework src="Foundation.framework" />
+    </platform>
+</plugin>
